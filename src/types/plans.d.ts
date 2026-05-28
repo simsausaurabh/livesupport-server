@@ -1,0 +1,35 @@
+import { Plan } from './enums.js';
+export interface PlanLimits {
+    maxAgents: number;
+    monthlyVisitors: number;
+    monthlyConversations: number;
+    chatHistoryMonths: number;
+    maxChatbots: number;
+    maxKnowledgeSources: number;
+    yearlyDiscountPct: number;
+    aiReplySuggestions: boolean;
+    aiChatSummary: boolean;
+    aiAutoTagging: boolean;
+    aiBotMode: boolean;
+    aiKnowledgeBase: boolean;
+    humanHandoff: boolean;
+    customAiPersona: boolean;
+    customLogo: boolean;
+    removeBranding: boolean;
+    cannedResponses: boolean;
+    analyticsBasic: boolean;
+    analyticsAdvanced: boolean;
+    agentRatings: boolean;
+    webhooks: boolean;
+    apiAccess: boolean;
+    customRoles: boolean;
+    slaReports: boolean;
+    fileAttachments: boolean;
+    exportData: boolean;
+    proactiveGreeting: boolean;
+    periodicCheckin: boolean;
+    widgetAdvancedStyles: boolean;
+}
+export declare const PLAN_LIMITS: Record<Plan, PlanLimits>;
+export declare function getPlanLimits(plan: Plan): PlanLimits;
+export declare function canUseFeature(plan: Plan, feature: keyof PlanLimits): boolean;
